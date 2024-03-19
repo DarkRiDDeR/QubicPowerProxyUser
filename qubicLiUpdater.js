@@ -55,6 +55,7 @@ try {
             timeout: timeout,
         })
         result = await response.json()
+        //console.log(result)
 
         if (result.miners) {
             let dbUsers = new Map() // [login, id]
@@ -104,10 +105,12 @@ try {
                             newWorkers.push(workerName)
                         }
                         if (stats.has(workerName)) { // repeat user.worker
-                            let statItem = stats.get(workerName)
-                            statItem.sol += sol
-                            statItem.its += its
-                            stats.set(workerName, statItem)
+                            if (isActive) {
+                                let statItem = stats.get(workerName)
+                                statItem.sol += sol
+                                statItem.its += its
+                                stats.set(workerName, statItem)
+                            }
                         } else {
                             stats.set(workerName, { its: its, sol: sol, lastActive: lastActive, isActive: isActive})
                         }

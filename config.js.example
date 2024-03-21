@@ -1,0 +1,14 @@
+export const qubic = {
+    login: 'guest@qubic.li',
+    password: 'guest13@Qubic.li',
+    specificDataServer: null
+}
+export const users = [
+    ['none', 'nonePassword', ''], // no detect user for worker
+    ['admin', 'adminPassword', 'wallet'],
+]
+
+export const install = {
+    currentEpoch: 101
+}
+

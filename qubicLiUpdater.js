@@ -175,6 +175,7 @@ try {
                     resolve(true)
                 })
             })
+            await execGetDbWorkers()
         }
 
         await new Promise((resolve, reject) => {
@@ -193,12 +194,12 @@ try {
 
         db.close()
 
-        /*console.log({dbUsers})
+        console.log({dbUsers})
         console.log({dbWorkers})
         console.log({newUsers})
         console.log({newWorkers})
         //console.log({poolWorkers})
-        console.log(stats)*/
+        console.log(stats)
         
     } else {
         logger.error(serverData, 'Error: miners data')
